@@ -6,7 +6,7 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
-  * [Walkthrough Video](#Walkthrough Video)
+  * [Video](#Video)
   * [Questions](#Questions)
   ## Installation
   `npm install` `npm install inquirer` `node index.js`
