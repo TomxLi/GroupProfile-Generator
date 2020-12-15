@@ -112,7 +112,7 @@ function addHtml(member) {
         if (role === "Engineer") {
             const gitHub = member.getGithub();
             data = `<div class="col-6">
-            <div class="card text-white bg-success mb-3 mx-auto" style="width: 18rem">
+            <div class="card bg-success mb-3 mx-auto" style="width: 18rem">
             <h5 class="card-header">${name}<br /><br />Engineer</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
@@ -136,7 +136,7 @@ function addHtml(member) {
         } else {
             const officePhone = member.getOfficeNumber();
             data = `<div class="col-6">
-            <div class="card text-white bg-danger mb-3 mx-auto" style="width: 18rem">
+            <div class="card bg-danger mb-3 mx-auto" style="width: 18rem">
             <h5 class="card-header">${name}<br /><br />Manager</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
