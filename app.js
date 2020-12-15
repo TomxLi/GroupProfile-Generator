@@ -20,9 +20,9 @@ function addMember() {
         type: "list",
         message: "Please select team employee's role",
         choices: [
+            "Manager",
             "Engineer",
-            "Intern",
-            "Manager"
+            "Intern"
         ],
         name: "role"
     },
@@ -36,12 +36,12 @@ function addMember() {
     }])
     .then(function({name, role, id, email}) {
         let roleInfo = "";
-        if (role === "Engineer") {
+        if (role === "Manager") {
+            roleInfo = "office number";
+        } else if (role === "Engineer") {
             roleInfo = "GitHub username";
-        } else if (role === "Intern") {
-            roleInfo = "school name";
         } else {
-            roleInfo = "office phone number";
+            roleInfo = "School name";
         }
         inquirer.prompt([{
             message: `Please input employee's ${roleInfo}`,
@@ -58,12 +58,12 @@ function addMember() {
         }])
         .then(function({roleInfo, moreMembers}) {
             let newMember;
-            if (role === "Engineer") {
-                newMember = new Engineer(name, id, email, roleInfo);
-            } else if (role === "Intern") {
-                newMember = new Intern(name, id, email, roleInfo);
-            } else {
+            if (role === "Manager") {
                 newMember = new Manager(name, id, email, roleInfo);
+            } else if (role === "Engineer") {
+                newMember = new Engineer(name, id, email, roleInfo);
+            } else {
+                newMember = new Intern(name, id, email, roleInfo);
             }
             employees.push(newMember);
             addHtml(newMember)
